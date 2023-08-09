@@ -1,10 +1,10 @@
 from random import randint
 from random import sample
 
-digits = '0123456789'
-uppercase_letters = 'QWERTYUIOPASDFGHJKLZXCVBNM'
-lowercase_letters = 'qwertyuiopasdfghjklzxcvbnm'
-punctuation = '!#$%&*+-=?@^_'
+DIGITS = '0123456789'
+UPPERCASE_LETTERS = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+LOWERCASE_LETTERS = 'qwertyuiopasdfghjklzxcvbnm'
+PUNCTUATION = '!#$%&*+-=?@^_'
 char = list()
 
 
@@ -47,10 +47,10 @@ uppercase_include = input('Включать прописные буквы? Вв�
 lowercase_include = input('Включать строчные буквы? Введите \'да\' или \'нет\'\n').strip()
 special_symbols_include = input('Включать специальные символы? Введите \'да\' или \'нет\'\n').strip()
 
-alphabet_composition(isdigit_include, digits)
-alphabet_composition(uppercase_include, uppercase_letters)
-alphabet_composition(lowercase_include, lowercase_letters)
-alphabet_composition(special_symbols_include, punctuation)
+alphabet_composition(isdigit_include, DIGITS)
+alphabet_composition(uppercase_include, UPPERCASE_LETTERS)
+alphabet_composition(lowercase_include, LOWERCASE_LETTERS)
+alphabet_composition(special_symbols_include, PUNCTUATION)
 
 if len(char) != 0:
     while psw_length < len(char):
