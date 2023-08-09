@@ -1,9 +1,6 @@
-# password-generator
+password-generator
+==================
 
-Это простой консольный генератор паролей с минимальными настройками: использование цифр, прописных и строчных букв, а также специальных символов.
+This is a simple console password generator with minimal settings: the use of numbers, uppercase and lowercase letters, as well as special characters.
 
-Внимание! В зависимости от количества используемых категорий символов меняется минимальная длина символов. То есть если вы используете только цифры и специальные символы, то минимальная длина пароля равна двум, если вы решите добавить прописные буквы к этому набору символов, то минимальная длина пароля уже будет равна 3. Это сделано для того, чтобы использвать все символы в пароле, которые определил пользователь.
-
-Что касается безопасности? Если вы изучите код, который генерирует пароли, то вы увидете, что ваши генерируемые пароли никуда не отправляются, они выполняются исключительно на вашем компьютере и нигде не хранятся.
-
-Генератор паролей пока что не обладает интерфейсом, но в будущем планируется это исправить.
+> :warning: **If you cannot enter the required password length**: Depending on the number of character categories used, the minimum character length changes. That is, if you use only numbers and special characters, then the minimum password length is two, if you decide to add uppercase letters to this set of characters, then the minimum password length will already be 3. This is done in order to use all the characters in the password that the user has defined.
