@@ -1,1 +1,5 @@
+# PyCharm
 /.idea
+
+# Keep venv out of version control
+/venv

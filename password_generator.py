@@ -5,6 +5,7 @@ DIGITS = '0123456789'
 UPPERCASE_LETTERS = 'QWERTYUIOPASDFGHJKLZXCVBNM'
 LOWERCASE_LETTERS = 'qwertyuiopasdfghjklzxcvbnm'
 PUNCTUATION = '!#$%&*+-=?@^_'
+
 char = list()
 
 
