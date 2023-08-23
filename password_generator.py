@@ -81,10 +81,10 @@ def dictionary_of_valid_characters(pwd_length: int, char: list) -> str:
 pwd_quantity = get_passwords_info("Number of passwords:\n", "quantity")
 pwd_length = get_passwords_info("Password length:\n", "length")
 
-isdigit_include = get_alphabet_composition("Include DIGITS? Enter 'y' or 'n': ", AlphabetPower.DIGITS)
-uppercase_include = get_alphabet_composition("Include UPPERCASE LETTERS? Enter 'y' or 'n': ", AlphabetPower.UPPERCASE_LETTERS)
-lowercase_include = get_alphabet_composition("Include LOWERCASE LETTERS? Enter 'y' or 'n': ", AlphabetPower.LOWERCASE_LETTERS)
-special_symbols_include = get_alphabet_composition("Include SPECIAL SYMBOLS? Enter 'y' or 'n': ", AlphabetPower.SPECIAL_SYMBOLS)
+get_alphabet_composition("Include DIGITS? Enter 'y' or 'n': ", AlphabetPower.DIGITS)
+get_alphabet_composition("Include UPPERCASE LETTERS? Enter 'y' or 'n': ", AlphabetPower.UPPERCASE_LETTERS)
+get_alphabet_composition("Include LOWERCASE LETTERS? Enter 'y' or 'n': ", AlphabetPower.LOWERCASE_LETTERS)
+get_alphabet_composition("Include SPECIAL SYMBOLS? Enter 'y' or 'n': ", AlphabetPower.SPECIAL_SYMBOLS)
 
 
 if len(char) != 0:
