@@ -1,65 +1,99 @@
-from random import randint
-from random import sample
+from random import randrange, sample
+from typing import Literal
+from enum import Enum
 
-DIGITS = '0123456789'
-UPPERCASE_LETTERS = 'QWERTYUIOPASDFGHJKLZXCVBNM'
-LOWERCASE_LETTERS = 'qwertyuiopasdfghjklzxcvbnm'
-PUNCTUATION = '!#$%&*+-=?@^_'
+from exceptions import CantGetIntType, CantGetStrType
 
 char = list()
 
 
-def isdigit_valid(question):
-    str_digit = input(question)
-
-    if str_digit.isdigit():
-        return int(str_digit)
-    else:
-        return isdigit_valid(question)
+class AlphabetPower(str, Enum):
+    DIGITS = '0123456789'
+    UPPERCASE_LETTERS = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+    LOWERCASE_LETTERS = 'qwertyuiopasdfghjklzxcvbnm'
+    SPECIAL_SYMBOLS = '!#$%&*+-=?@^_'
 
 
-def alphabet_composition(answer, symbols):
-    if answer.lower() in ('д', 'да', 'y', 'yes'):
-        char.append(symbols)
+def get_passwords_info(
+        question: str,
+        question_type: Literal["quantity"] | Literal["length"]
+) -> int:
+    try:
+        int_question_value = int(input(question))
+
+        if question_type == "quantity" and int_question_value < 0:
+            print("Incorrect input data. Enter positive numbers!")
+            return get_passwords_info(question, "quantity")
+
+        else:
+            return int_question_value
+
+    except ValueError:
+        # raise CantGetIntType
+        print("Incorrect input data type. Enter integers!")
+        return get_passwords_info(question, question_type)
 
 
-def dictionary_of_valid_characters(psw_length, char):
-    psw_alphabet = list()
+def get_alphabet_composition(
+        question: str,
+        alphabet_type: AlphabetPower
+):
+    try:
+        question_value = input(question).strip().lower()
+
+        if question_value in ('y', 'ye', 'yes'):
+            char.append(alphabet_type)
+
+        elif question_value in ('n', 'no'):
+            pass
+
+        else:
+            print("""Incorrect input data type. Enter 'y' or 'n'!""")
+            return get_alphabet_composition(question, alphabet_type)
+
+    except ValueError:
+        # raise CantGetBoolType
+        print("Incorrect input data type. Enter 'y' or 'n'!")
+        return get_alphabet_composition(question, alphabet_type)
+
+
+def dictionary_of_valid_characters(pwd_length: int, char: list) -> str:
+    pwd_alphabet = list()
     count = 0
     flag = True
 
-    for i in range(psw_length):
-        psw_alphabet.append(char[count][randint(0, len(char[count]) - 1)])
+    for _ in range(pwd_length):
+        pwd_alphabet.append(char[count][randrange(0, len(char[count]))])
 
         if count < len(char) - 1 and flag:
             count += 1
+
+        elif not flag:
+            count = randrange(0, len(char))
+
         else:
             flag = False
-            count = randint(0, len(char) - 1)
+            count = randrange(0, len(char))
 
-    return print(''.join(sample(psw_alphabet, len(psw_alphabet))))
+    return ''.join(sample(pwd_alphabet, len(pwd_alphabet)))
 
 
-psw_quantity = isdigit_valid('Кол-во паролей\n')
-psw_length = isdigit_valid('Длина пароля\n')
+pwd_quantity = get_passwords_info("Number of passwords:\n", "quantity")
+pwd_length = get_passwords_info("Password length:\n", "length")
 
-isdigit_include = input('Включать цифры? Введите \'да\' или \'нет\'\n').strip()
-uppercase_include = input('Включать прописные буквы? Введите \'да\' или \'нет\'\n').strip()
-lowercase_include = input('Включать строчные буквы? Введите \'да\' или \'нет\'\n').strip()
-special_symbols_include = input('Включать специальные символы? Введите \'да\' или \'нет\'\n').strip()
+isdigit_include = get_alphabet_composition("Include DIGITS? Enter 'y' or 'n': ", AlphabetPower.DIGITS)
+uppercase_include = get_alphabet_composition("Include UPPERCASE LETTERS? Enter 'y' or 'n': ", AlphabetPower.UPPERCASE_LETTERS)
+lowercase_include = get_alphabet_composition("Include LOWERCASE LETTERS? Enter 'y' or 'n': ", AlphabetPower.LOWERCASE_LETTERS)
+special_symbols_include = get_alphabet_composition("Include SPECIAL SYMBOLS? Enter 'y' or 'n': ", AlphabetPower.SPECIAL_SYMBOLS)
 
-alphabet_composition(isdigit_include, DIGITS)
-alphabet_composition(uppercase_include, UPPERCASE_LETTERS)
-alphabet_composition(lowercase_include, LOWERCASE_LETTERS)
-alphabet_composition(special_symbols_include, PUNCTUATION)
 
 if len(char) != 0:
-    while psw_length < len(char):
-        print(f"""Недопустимая длина пароля. Минимальная длина пароля равна {len(char)}""")
-        psw_length = isdigit_valid('Длина пароля\n')
+    while pwd_length < len(char):
+        print(f"""Invalid password length. The minimum password length is {len(char)}""")
+        pwd_length = get_passwords_info("Password length:\n", "length")
 
-    for _ in range(psw_quantity):
-        dictionary_of_valid_characters(psw_length, char)
+    for _ in range(pwd_quantity):
+        print(dictionary_of_valid_characters(pwd_length, char))
 
 else:
-    print('Ничем не могу помочь!')
+    print("There's nothing I can do!")
