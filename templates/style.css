@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url(fonts/JetBrainsMono/webfonts/JetBrainsMono-Light.woff2);
+}
+
+body {
+    background: #313131;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: space-evenly;
+    min-height: 100vh;
+}
+
+.programm-name {
+    color: #FFF;
+    text-align: center;
+    font-style: normal;
+    line-height: normal;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    background: #4E4E4E;
+    box-shadow: 0px 0px 8px 2px rgba(199, 199, 199, 0.2);
+}
+
+.container-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-input {
+    -moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+    text-align: center;
+    background: #D9D9D9;
+    border: none;
+    outline: none;
+}
+
+.text-input::-webkit-outer-spin-button,
+.text-input::-webkit-inner-spin-button {
+    display:none
+}
+
+.text-input:hover {
+    box-shadow: 0px 0px 4px #007BFF;
+}
+
+.text-input:focus {
+    outline: 2px solid #007BFF;
+}
+
+.container-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.chk-btn {
+    display: none;
+}
+
+.chk-btn + label {
+    text-align: center;
+    background: #D9D9D9;
+    cursor: pointer;
+}
+
+.chk-btn:not(:checked) + label:hover {
+    box-shadow: 0px 0px 4px #007BFF;
+}
+
+.chk-btn + label.active,
+.chk-btn:checked + label {
+    background: #007BFF;
+    color: white;
+}
+
+.btn {
+    background: #28A745;
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 8px #28A745;
+}
+
+@media (min-width: 280px) and (max-width: 320px) {
+    .programm-name {
+        font-size: 16px;
+    }
+
+    .menu {
+        width: 240px;
+        height: 457px;
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+
+    .container-input {
+        height: 105px;
+    }
+
+    .text-input {
+        height: 45px;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+    .container-checkbox {
+        height: 225px;
+    }
+
+    .chk-btn + label {
+        width: 100%;
+        height: 45px;
+        font-size: 12px;
+        padding: 13px;
+        border-radius: 12px;
+    }
+
+    .btn {
+        height: 47px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width: 320px) {
+    .programm-name {
+        font-size: 24px;
+    }
+
+    .menu {
+        width: 80vw;
+        height: 467px;
+        padding: 35px 30px;
+        border-radius: 50px;
+    }
+
+    .container-input {
+        height: 100px;
+    }
+
+    .text-input {
+        height: 46px;
+        font-size: 16px;
+        border-radius: 15px;
+    }
+
+    .container-checkbox {
+        height: 208px;
+    }
+
+    .chk-btn + label {
+        width: 100%;
+        height: 46px;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .btn {
+        height: 73px;
+        font-size: 24px;
+        border-radius: 18px;
+    }
+}
+
+@media (min-width: 481px) {
+    .programm-name {
+        font-size: 24px;
+    }
+
+    .menu {
+        width: 80vw;
+        height: 504px;
+        padding: 50px 45px;
+        border-radius: 50px;
+    }
+
+    .container-input {
+        height: 100px;
+    }
+
+    .text-input {
+        height: 42px;
+        font-size: 20px;
+        border-radius: 15px;
+    }
+
+    .container-checkbox {
+        height: 216px;
+    }
+
+    .chk-btn + label {
+        width: 100%;
+        height: 42px;
+        font-size: 20px;
+        padding: 8px;
+        border-radius: 15px;
+    }
+
+    .btn {
+        height: 56px;
+        font-size: 24px;
+        border-radius: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .programm-name {
+        font-size: 32px;
+    }
+
+    .menu {
+        width: 80vw;
+        height: 716px;
+        padding: 50px 45px;
+        border-radius: 50px;
+    }
+
+    .container-input {
+        height: 150px;
+    }
+
+    .text-input {
+        height: 60px;
+        font-size: 24px;
+        border-radius: 20px;
+    }
+
+    .container-checkbox {
+        height: 330px;
+    }
+
+    .chk-btn + label {
+        width: 100%;
+        height: 60px;
+        font-size: 24px;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .btn {
+        height: 76px;
+        font-size: 24px;
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .programm-name {
+        font-size: 48px;
+    }
+
+    .menu {
+        width: 90vw;
+        height: 420px;
+        border-radius: 50px;
+        padding: 50px 70px;
+    }
+
+    .container-input {
+        height: 110px;
+    }
+
+    .text-input {
+        height: 50px;
+        font-size: 24px;
+        border-radius: 15px;
+    }
+
+    .container-checkbox {
+        height: 110px;
+    }
+
+    .chk-btn + label {
+        width: 47%;
+        height: 50px;
+        font-size: 20px;
+        padding: 13px;
+        border-radius: 15px;
+    }
+
+    .btn {
+        height: 75px;
+        font-size: 24px;
+        border-radius: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .programm-name {
+        font-size: 64px;
+    }
+
+    .menu {
+        width: 1120px;
+        height: 620px;
+        padding: 50px 70px;
+        border-radius: 50px;
+    }
+
+    .container-input {
+        height: 185px;
+    }
+
+    .text-input {
+        height: 75px;
+        font-size: 24px;
+        border-radius: 25px;
+    }
+
+    .container-checkbox {
+        height: 185px;
+    }
+
+    .chk-btn + label {
+        width: 460px;
+        height: 75px;
+        font-size: 24px;
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    .btn {
+        height: 75px;
+        font-size: 24px;
+        border-radius: 25px;
+    }
+}

@@ -3,3 +3,7 @@
 
 # Keep venv out of version control
 /venv
+
+__pycache__
+
+features.txt

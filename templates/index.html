@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <title>password-generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="programm-name">password-generator</div>
+            <div class="menu">
+                <div class="container-menu">
+                    <div class="container-input">
+                        <input type="number" class="text-input" placeholder="Password length" min="8" />
+                        <input type="number" class="text-input" placeholder="Number of passwords" min="1" />
+                    </div>
+                    <div class="container-checkbox">
+                        <input type="checkbox" id="lowlet" class="chk-btn" />
+                        <label for="lowlet">Lowercase letters</label>
+
+                        <input type="checkbox" id="uplet" class="chk-btn" />
+                        <label for="uplet">Uppercase letters</label>
+
+                        <input type="checkbox" id="digit" class="chk-btn" />
+                        <label for="digit">Digits</label>
+
+                        <input type="checkbox" id="specsymbol" class="chk-btn" />
+                        <label for="specsymbol">Special symbols</label>
+                    </div>
+                    <button class="btn">Generate!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
