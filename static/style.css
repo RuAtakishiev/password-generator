@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url(fonts/JetBrainsMono/webfonts/JetBrainsMono-Light.woff2);
+    src: url(../templates/fonts/JetBrainsMono/webfonts/JetBrainsMono-Light.woff2);
 }
 
 body {
@@ -181,6 +181,31 @@ body {
     color: #FFFFFF;
 }
 
+.active {
+    background: #007BFF;
+    color: #FFFFFF;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 25px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 30px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.4s, fadeout 0.4s 0.8s;
+    animation: fadein 0.4s, fadeout 0.4s 0.8s;
+}
+
 @media (min-width: 280px) and (max-width: 320px) {
     .programm-name {
         font-size: 16px;
@@ -247,6 +272,35 @@ body {
         font-size: 12px;
         border-radius: 12px;
         margin: 4px 0px 4px 0px;
+    }
+
+    #snackbar {
+        min-width: 250px;
+        margin-left: -125px;
+        border-radius: 25px;
+        padding: 16px;
+        top: 7vh;
+    }
+
+    /* Animations to fade the snackbar in and out */
+    @-webkit-keyframes fadein {
+        from {top: 0; opacity: 0;}
+        to {top: 7vh; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {top: 0; opacity: 0;}
+        to {top: 7vh; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {top: 7vh; opacity: 1;}
+        to {top: 0; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {top: 7vh; opacity: 1;}
+        to {top: 0; opacity: 0;}
     }
 }
 
@@ -317,6 +371,33 @@ body {
         border-radius: 18px;
         margin: 4px 0px 4px 0px;
     }
+
+    #snackbar {
+        min-width: 288px;
+        margin-left: -144px;
+        font-size: 20px;
+        top: 6vh;
+    }
+
+    @-webkit-keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 6vh; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 6vh; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {top: 6vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {top: 6vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
 }
 
 @media (min-width: 481px) {
@@ -385,6 +466,33 @@ body {
         border-radius: 15px;
         margin: 8px 0px 8px 0px;
     }
+
+    #snackbar {
+        min-width: 342px;
+        margin-left: -171px;
+        font-size: 20px;
+        top: 8vh;
+    }
+
+    @-webkit-keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 8vh; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 8vh; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {top: 8vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {top: 8vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
 }
 
 @media (min-width: 768px) {
@@ -449,6 +557,36 @@ body {
         border-radius: 20px;
         margin: 15px 0px 15px 0px;
     }
+
+    #snackbar {
+        min-width: 524px;
+        height: 120px;
+        margin-left: -262px;
+        font-size: 24px;
+        border-radius: 25px;
+        padding: 42px;
+        top: 8vh;
+    }
+
+    @-webkit-keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 8vh; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 8vh; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {top: 8vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {top: 8vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
 }
 
 @media (min-width: 992px) {
@@ -512,6 +650,36 @@ body {
         border-radius: 15px;
         margin: 5px 0px 5px 0px;
     }
+
+    #snackbar {
+        min-width: 752px;
+        height: 80px;
+        margin-left: -376px;
+        font-size: 24px;
+        border-radius: 25px;
+        padding: 27px;
+        top: 6vh;
+    }
+
+    @-webkit-keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 6vh; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 6vh; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {top: 6vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {top: 6vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
 }
 
 @media (min-width: 1200px) {
@@ -568,5 +736,35 @@ body {
         font-size: 24px;
         border-radius: 25px;
         margin: 17px 0px 17px 0px;
+    }
+
+    #snackbar {
+        min-width: 980px;
+        height: 120px;
+        margin-left: -490px;
+        font-size: 24px;
+        border-radius: 25px;
+        padding: 42px;
+        top: 6vh;
+    }
+
+    @-webkit-keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 6vh; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {top: 0px; opacity: 0;}
+        to {top: 6vh; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {top: 6vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {top: 6vh; opacity: 1;}
+        to {top: 0px; opacity: 0;}
     }
 }
